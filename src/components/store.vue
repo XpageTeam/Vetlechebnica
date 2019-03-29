@@ -14,6 +14,7 @@
 	        erorr: false,
 	        curAjax: false,
             personalDataText: "",
+            yaCounter: typeof(yaCounter30204534) != "undefined" ? yaCounter30204534 : false,
 
 	        doctors: [],
 	    },

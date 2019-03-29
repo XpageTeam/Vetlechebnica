@@ -257,7 +257,6 @@
             self.ajaxProcessed = true;
           },
           success(result){
-            console.log(result)
             const getYear = date => {
               const day = (new Date(self.selectedDate).getDate()).toString().length == 1 
                             ? "0"+ new Date(self.selectedDate).getDate() 
@@ -273,7 +272,6 @@
 
             if (result.save_claim)
               if (result.save_claim.status == "success"){
-                console.log(result)
 
                 self.messageTitle = "Вы успешно записаны на приём"
                 self.messageText = "Ждём вас "+getYear(self.selectedDate)+" в "+self.selectedTime+"."
@@ -299,6 +297,9 @@
             }
 
             // self.$emit("update")
+            if (this.$store.state.yaCounter)
+              this.$store.state.yaCounter.reachGoal('FORM_WRITING')
+
           },
           complete(){
             self.ajaxProcessed = false;
