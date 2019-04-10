@@ -36,7 +36,7 @@
 	            state.curAjax = $.ajax({
                     type: "post",
                     dataType: "json",
-                    url: 'http://vetlechebnica74.ru/api/',
+                    url: 'https://vetlechebnica74.ru/api/',
                     crossDomain: true,
                     data: {
                         command: "EmploeesTime",

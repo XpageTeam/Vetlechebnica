@@ -232,6 +232,7 @@
           self = this;
 
         data.append("date", this.selectedDate)
+        data.append("test", 'Y')
         data.append("timeTo", this.getNextTime(this.selectedTime))
         data.append("command", "SaveClaim")
 
@@ -247,7 +248,7 @@
         }
 
         $.ajax({
-          url: "http://vetlechebnica74.ru/api/",
+          url: "https://vetlechebnica74.ru/api/",
           type: "POST",
           processData: false,
           contentType: false,
@@ -301,7 +302,8 @@
               this.$store.state.yaCounter.reachGoal('FORM_WRITING')
 
           },
-          complete(){
+          complete(result){
+            console.log(result)
             self.ajaxProcessed = false;
           },
           error(result){
