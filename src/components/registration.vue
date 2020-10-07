@@ -38,7 +38,7 @@
               <div class="service__item-inputs">
                 <div class="service__input-cont">
                   <input placeholder="Ваше имя" name="name" class="service__input" type="text"/>
-                  <label class="service__label">Ваше имя</label>
+                  <label class="service__label">Ваши ФИО</label>
                   <div class="forms__error-message"></div>
                 </div>
                 <div class="service__input-cont">
@@ -51,15 +51,23 @@
                   <label class="service__label">Ваш e-mail</label>
                   <div class="forms__error-message"></div>
                 </div>
-                <div class="service__input-cont"></div>
+                <div class="service__input-cont">
+                  <div class="service__item-checkbox">
+                    <div class="checkbox">
+                      <input id="firstVisit" type="checkbox" name="firstVisit" class="checkbox__input">
+                      <label for="firstVisit" class="checkbox__label">Первый раз в клинике</label>
+                      <div class="forms__error-message"></div>
+                    </div>
+                  </div>
+                </div>
                 <div class="service__input-cont service__input-cont--textarea">
                   <textarea placeholder="Текст" name="text" class="service__input"></textarea>
                   <label class="service__label">Вид, возраст, вес <br> животного</label>
                   <div class="forms__error-message"></div>
                 </div>
                 <div class="service__input-cont service__input-cont--textarea">
-                  <textarea placeholder="Комментарий" name="comment" class="service__input"></textarea>
-                  <label class="service__label">Вид услуги</label>
+                  <textarea required="" placeholder="Комментарий" name="comment" class="service__input"></textarea>
+                  <label class="service__label">Цель обращения</label>
                   <div class="forms__error-message"></div>
                 </div>
               </div>
@@ -336,7 +344,7 @@
               case 'phone':
                 new IMask (ms, {
                   mask: '+{7} (000) 000-00-00',
-                  // lazy: false
+                  lazy: false
                 })
 
               break;
@@ -427,6 +435,9 @@
 <style lang="sass" scoped>
   .calendar
     margin: 0 !important
+
+  .checkbox__label:after
+    background: url("https://vetlechebnica74.ru/local/templates/vet/img/ico-checked.svg") center no-repeat
 
   .checkbox
     position: relative
