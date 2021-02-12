@@ -23,6 +23,9 @@
                     </select>
                     <label class="service__label">Доктор</label>
                   </div>
+                  <div v-if="selectedDoctorID" class="service__input-cont--address service__input-cont--doctor">
+                    {{ doctors.filter(doc => doc.id == selectedDoctorID)[0].address }}
+                  </div>
                   <div class="service__radio-group service__radio-group--time">
                     <div v-for="time in timeArray" class="service-radio">
                       <input class="service-radio__input" :disabled="isUnactiveTime(time)" v-model="selectedTime" name="timeFrom" type="radio" :value="time" :id="'time'+time"/>
