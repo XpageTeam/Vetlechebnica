@@ -77,6 +77,19 @@
                                 })
                             }
 
+                            for (let key in times){
+                                const time = times[key];
+
+                                let targetDoctor = doctors.filter(doctor => doctor.id == time.doctorId);
+
+                                if (!targetDoctor.length)
+                                    continue;
+
+                                targetDoctor = targetDoctor[0];
+
+                                doctors[doctors.indexOf(targetDoctor)].address = time.dates[0].address;
+                            }
+
                             self.commit("setDoctors", doctors)
                         }catch(error){
                             console.error(error)

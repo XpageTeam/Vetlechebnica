@@ -7,7 +7,7 @@
             'ajax-processed' : $store.state.ajaxProcessed,
         }">
             <div class="desktop-table">
-                <div class="desktop-table__head">
+                <!-- <div class="desktop-table__head">
                     <table>
                       <thead>
                         <tr>
@@ -18,12 +18,30 @@
                           <th></th>
                           <th v-for="doctor in doctors">{{ doctor.position }}</th>
                         </tr>
+                        <tr>
+                            <th></th>
+                            <th v-for="doctor in doctors">{{ doctor.address }}</th>
+                        </tr>
                       </thead>
                     </table>
-                </div>
+                </div> -->
                 <div class="main-grid-ear main-grid-ear--left"></div>
                 <div class="desktop-table__main">
                     <table>
+                        <thead class="desktop-table__head">
+                            <tr>
+                                <th></th>
+                                <th v-for="doctor in doctors">{{ doctor.name }}</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th v-for="doctor in doctors">{{ doctor.position }}</th>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th v-for="doctor in doctors">{{ doctor.address }}</th>
+                            </tr>
+                      </thead>
                       <tbody>
                         <tr v-for="row in timeRows">
                           <td class="desktop-table__time">
@@ -116,7 +134,7 @@
             })
         },
         updated(){
-            this.sameSizes()
+            this.sameSizes();
 
             ;(function(){
                 const tableScroll = document.querySelector(".desktop-table__main"),
@@ -309,8 +327,17 @@
             top: 0
             z-index: 10
 
+            tr
+
+                &:nth-child(3) th
+                    font-size: 10px
+                    text-align: center
+                    height: auto
+                    padding: 3px
+
             th
                 background: #fff
+                box-sizing: border-box
 
         &__time
 
